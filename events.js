@@ -10,7 +10,7 @@ export function delegate(node, event, selectors) {
   node.addEventListener(event, e => {
     for (const selector of selectors) {
       const target = e.target.closest(selector);
-      if (target) selectors[selector](target, event);
+      if (target) selectors[selector](e, target);
     }
   });
 }
